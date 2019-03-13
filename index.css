@@ -85,7 +85,13 @@
     background-color: transparent;
     border:none;
 }
+.js-toDoList button:focus{
+    outline: none;
+}
+
 .js-toDoList li{
+    display:flex;
+    justify-content: space-between;
     font-size: 20px;
     font-weight: 700;
     list-style: none;
@@ -109,3 +115,4 @@
     z-index: -1;
     animation: fadeIn 0.5s linear;
 }
+

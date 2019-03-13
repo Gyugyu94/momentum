@@ -5,6 +5,13 @@ const form = document.querySelector(".js-form"),
 const USER_LS = "currentUser";
 const SHOWING_CN = "showing";
 
+function delGreeting(event){
+    greeting.classList.remove(SHOWING_CN);
+    form.classList.add(SHOWING_CN);
+    localStorage.removeItem(USER_LS);
+    input.value ="";
+}
+
 function saveName(text){
     localStorage.setItem(USER_LS, text);
 }
@@ -24,7 +31,9 @@ function askForName(){
 function paintGreeting(text){
     form.classList.remove(SHOWING_CN);
     greeting.classList.add(SHOWING_CN);
+    greeting.addEventListener("click",delGreeting);
     greeting.innerText = `Hello ${text}`;
+ 
 }
 
 function loadName(){
